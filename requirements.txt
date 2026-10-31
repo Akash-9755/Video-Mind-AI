@@ -1,0 +1,35 @@
+# --- UI ---
+streamlit>=1.39.0
+
+# --- Audio input ---
+yt-dlp>=2024.10.0          # download audio from YouTube URLs
+pydub>=0.25.1              # audio handling for uploaded files
+
+# --- Transcription (local Whisper) ---
+faster-whisper>=1.0.3      # lighter and faster than openai-whisper on CPU
+# openai-whisper>=20240930 # alternative; use ONE of the two, not both
+
+# --- Translation (Hindi -> English) ---
+deep-translator>=1.11.4    # optional; Whisper can also translate to English itself
+
+# --- LangChain core + LLM providers ---
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-mistralai>=0.2.0   # Mistral
+langchain-groq>=0.2.0        # Groq
+langchain-google-genai>=2.0.0  # Google Gemini
+
+# --- RAG: vector store + embeddings ---
+chromadb>=0.5.0
+langchain-chroma>=0.1.4
+langchain-huggingface>=0.1.0
+sentence-transformers>=3.0.0
+
+# --- Export ---
+fpdf2>=2.8.0               # PDF export
+# reportlab>=4.2.0         # alternative if you want richer PDF layouts
+
+# --- Utilities ---
+python-dotenv>=1.0.0       # load API keys from .env

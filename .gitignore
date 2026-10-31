@@ -1,0 +1,12 @@
+# Downloaded media files
+downloades/
+*.wav
+*.mp3
+*.mp4
+
+# Temporary files
+*.pyc
+__pycache__/
+.venv/
+venv/
+.env
