@@ -11,7 +11,7 @@ def download_youtube_audio(url :str) ->str:
         "format": "bestaudio/best",
         "outtmpl": output_path,
         "format": "bestaudio/best",
-        "ffmpeg_location": r"C:\Users\DELL PC\Downloads\ffmpeg-9.0.2-essentials_build\ffmpeg-9.0.2-essentials_build\bin",
+        "ffmpeg_location": "ffmpeg",
         "noplaylist": True,
         "postprocessors": [
             {
