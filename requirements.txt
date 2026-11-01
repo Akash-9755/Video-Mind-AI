@@ -2,6 +2,11 @@
 # UI
 streamlit>=1.39.0
 
+# HTTP requests
+requests>=2.31.0
+
+deno>=2.3.0
+
 # Audio processing
 yt-dlp[default]
 pydub==0.25.1
