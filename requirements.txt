@@ -6,7 +6,9 @@ yt-dlp>=2024.10.0          # download audio from YouTube URLs
 pydub>=0.25.1              # audio handling for uploaded files
 
 # --- Transcription (local Whisper) ---
-faster-whisper>=1.0.3      # lighter and faster than openai-whisper on CPU
+faster-whisper==1.2.1
+pydub==0.25.1
+audioop-lts==0.2.2    # lighter and faster than openai-whisper on CPU
 # openai-whisper>=20240930 # alternative; use ONE of the two, not both
 
 # --- Translation (Hindi -> English) ---
