@@ -33,3 +33,4 @@ fpdf2>=2.8.0               # PDF export
 
 # --- Utilities ---
 python-dotenv>=1.0.0       # load API keys from .env
+audioop-lts
