@@ -3,7 +3,7 @@
 streamlit>=1.39.0
 
 # Audio processing
-yt-dlp>=2024.10.0
+yt-dlp[default]
 pydub==0.25.1
 audioop-lts==0.2.2
 openai-whisper>=20240930
