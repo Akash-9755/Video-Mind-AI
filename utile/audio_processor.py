@@ -5,27 +5,38 @@ import os
 DOWNLOAD_DIR = 'downloades'
 os.makedirs(DOWNLOAD_DIR,exist_ok = True)
 
-def download_youtube_audio(url :str) ->str:
-    output_path = os.path.join(DOWNLOAD_DIR, "%(title)s.%(ext)s")
+
+def download_youtube_audio(url: str) -> str:
+    output_path = os.path.join(
+        DOWNLOAD_DIR, "%(title)s.%(ext)s"
+    )
+
     ydl_opts = {
         "format": "bestaudio/best",
         "outtmpl": output_path,
-        "format": "bestaudio/best",
-        "ffmpeg_location": "ffmpeg",
         "noplaylist": True,
         "postprocessors": [
             {
                 "key": "FFmpegExtractAudio",
                 "preferredcodec": "wav",
-                "preferredquality": "192",
             }
         ],
-        "quiet": True,
+        "quiet": False,
+        "retries": 3,
     }
+
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=True)
-        filename = ydl.prepare_filename(info).replace(".webm", ".wav").replace(".m4a", ".wav")
-    return filename
+        filename = ydl.prepare_filename(info)
+
+    wav_path = os.path.splitext(filename)[0] + ".wav"
+
+    if not os.path.exists(wav_path):
+        raise FileNotFoundError(
+            f"Audio conversion failed: {wav_path}"
+        )
+
+    return wav_path
 
 
 
